@@ -13,45 +13,161 @@
       </h1>
     </section>
     <article>
-        <header>
-          <h1>Growing Programs</h1>
-          <small>2022-03-25</small>
-        </header>
-        <p>Work in progress</p>
-        <section>
-            <p>This post was inspired by a <a href="https://twitter.com/rsnous/status/1465556099667566600">tweet</a> from Omar Rizwan:</p>
-            <q>i want to grow a program, like it's a plant that lives down in my browser console, and i take care of it and add to it over days and months and years</q>
-            <p>I love this metaphor of "growing programs" and wanted to explore what that might look and feel like. The following is story about Alice, an avid user of a fictional notes app, and her experience growing programs within in, starting from their inception as manual workflows all the way of up to spinning off into stand-alone applications.</p>
-            </section>
-            <section>
-        <h2>Growing manual procedures</h2>
-          <p>
-            Alice's work involves a lot of writing, so much of her day is spent inside her favourite notes app.
-          </p>
-          <p>
-            As she goes about her work day to day, she organically develops particular ways of doing things within the app which fits the way she thinks and works. A few example workflows:
-            <ol>
-                <li>
-                    She keeps a "rough notes" document which she uses to squirrel away snippets of text, new ideas, and tangential thoughts. It's her default place to put text as she goes about her day.
-                </li>
-                <li>
-                    Every time she starts a new essay, she adds the date she started it at the top and a date she expects to finish it. She also adds a "change log" section, which she uses to jot down what she added or changed in the essay each day and a "todos" section where she keeps a small list of the next steps for the essay.
-                </li>
-                <li>
-                    
-                </li>
-            </ol>
-          </p>
-        </section>
-        <section>
-            <h2>Growing scripts</h2>
-        </section>
-        <section>
-            <h2>Growing packages</h2>
-        </section>
-        <section>
-            <h2>Growing applications</h2>
-        </section>
+      <header>
+        <h1>Growing Programs</h1>
+        <small>2022-03-25</small>
+      </header>
+      <section>
+        <p>
+          This post was inspired by a
+          <a href="https://twitter.com/rsnous/status/1465556099667566600"
+            >tweet</a
+          >
+          from Omar Rizwan:
+        </p>
+        <blockquote>
+          i want to grow a program, like it's a plant that lives down in my
+          browser console, and i take care of it and add to it over days and
+          months and years
+        </blockquote>
+        <p>
+          I love this metaphor and want to explore what it might look and feel
+          like to play it out. What follows is a story about Alice, an avid user
+          of a fictional notes app, and her experience growing programs within
+          it.
+        </p>
+      </section>
+      <section>
+        <h2>Manual workflows are the seeds of programs</h2>
+        <p>
+          Alice's work involves a lot of writing, so much of her day is spent
+          inside her favourite notes app.
+        </p>
+        <p>
+          As she goes about her work, she organically develops workflows which
+          fit the way she thinks and works. For example:
+        </p>
+        <ol>
+          <li>
+            She keeps an "Inbox" section at the start of each essay where she
+            keeps a list of next steps, unincorporated ideas, etc.
+          </li>
+          <li>
+            She keeps an "Archive" section at the bottom of each essay, where
+            she keeps sentences and paragraphs that she needed to cut but wants
+            to keep around to maybe bring back in.
+          </li>
+        </ol>
+        <p>
+          These workflows are the seeds of programs. They're well-defined and
+          repeatable, something something that could be implemented by a
+          computer.
+        </p>
+        <p>
+          But workflows like these may drastically change as you find ways to
+          improve them or as the needs of your work changes. Since they're quick
+          and easy to implement, Alice doesn't mind implementing them manually
+          and find doing so provides lots of opportunities to notice how they
+          can be improved.
+        </p>
+      </section>
+      <section>
+        <h2>Scripts are the initial sprouting of a program</h2>
+        <p>
+          As time goes on, some of her workflows become core parts of her work.
+          Especially the archiving workflow, which she uses many times a day.
+          Although she likes having an archive of her cut sentences, she doesn't
+          like how implementing it takes her out of the flow of writing. Every
+          time she wants to archive some text, she needs to select it, cut it,
+          scroll all the way to the bottom of the document, paste it under the
+          archive heading, and then scroll back up.
+        </p>
+        <p>
+          She would love it if she could just select some text, hit a hotkey,
+          and have it moved down to the archive automatically. Luckily, the
+          notes app supports end-user scripting, so she decides to try creating
+          one for this workflow.
+        </p>
+        <p>
+          Alice has some experience programming, but never in this environment,
+          so she decides to use the apps macro recorder to get started. She
+          clicks "start recording macro", manually performs the steps in her
+          archive workflow, and then clicks "stop recording macro". This creates
+          a new script which performs exactly the actions she just did manually.
+          The resulting script isn't perfect, but it only takes a few
+          modifications in the apps built-in IDE to get it working how she
+          wants.
+        </p>
+        <p>
+          With that, her first program has sprouted! She assigns it to a hot key
+          and gets back to your work.
+        </p>
+        <p>
+          The script requires a bit of tending to as she uses it - fixing a bug
+          here, adding some logic there - but this is easy to do within the app.
+          When there's an error, the app provides a notification, and with one
+          click she's dropped into a debug mode to fix it. As she tends to it,
+          there's no need to recompile or redeploy. The program is always
+          running live right there in the app and ready to go.
+        </p>
+      </section>
+      <section>
+        <h2>Some scripts bloom into packages</h2>
+        <p>
+          Over the coming weeks, Alice implements more and more of her workflows
+          as short scripts. None of them are very intricate, but they save her
+          time throughout the day and allow her to focus on the writing itself.
+        </p>
+        <p>
+          At some point she notices that some of the scripts feel like
+          variations on the same idea. All of them take a piece of text, and
+          then quickly moving it to another section or document. The notes app
+          supports creating packages as well, so she decides to try refactoring
+          these scripts into one.
+        </p>
+        <p>
+          She creates abstractions which span the specific use cases which her
+          scripts implement, and encapsulates them in modules. She also defines
+          the main interface for the package: some built in defaults like "move
+          to archive", and "move to inbox", as well as an option to search and
+          select any section and document to move to. She surfaces the interface
+          through the right-click menu.
+        </p>
+        <p>
+          Now, as she uses the package, it feels just right. It took some time
+          and tending to for her scripts to grow, but they've now bloomed into
+          the program that they always wanted to be.
+        </p>
+      </section>
+      <h2>Programs can outgrow their home and must be repotted</h2>
+      <p>
+        Eventually Alice's scripts and packages begin to settle. Her writing
+        environment fits the way she thinks and works more than it ever has, but
+        she's still not satisfied. It feels like there's more room to improve,
+        but her programs seem to have hit a plateau.
+      </p>
+      <p>
+        There comes a time in every plants life when a change in it's living
+        accommodations is required, and it’s time for a repotting. This could be
+        because it's outgrown its previous container or because it simply needs
+        some new soil.
+      </p>
+      <p>
+        Alice knew that her programs could be so much more if allowed to grow,
+        but they were hitting the limits imposed by their home inside the notes
+        app.
+      </p>
+      <p>
+        So she decided it's time to build them a new home. She exports her
+        programs from the notes app and places them into a new folder. She fires
+        up her code editor and gets to work building a stand-alone app which can
+        grow unconstrained to fit her writing needs perfectly.
+      </p>
     </article>
+    <footer>
+      <br>
+      <hr>
+      <br>
+    </footer>
   </body>
 </html>
