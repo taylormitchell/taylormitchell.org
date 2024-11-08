@@ -1,1 +1,1 @@
-Moved to https://github.com/taylormitchell/taylors-tech/tree/main/packages/taylormitchell.org
+Moved to https://github.com/taylormitchell/home/tree/main/packages/taylormitchell.org
