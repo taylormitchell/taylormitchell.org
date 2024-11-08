@@ -1,24 +1,24 @@
-name: Deploy
+# name: Deploy
 
-on:
-  push:
-    branches: [ master ]
+# on:
+#   push:
+#     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+#   # Allows you to run this workflow manually from the Actions tab
+#   workflow_dispatch:
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Create SSH key
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H copycat.dreamhost.com > ~/.ssh/known_hosts
-        shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-      - run: source scripts/deploy.sh
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Create SSH key
+#         run: |
+#           mkdir -p ~/.ssh/
+#           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+#           sudo chmod 600 ~/.ssh/id_rsa
+#           ssh-keyscan -H copycat.dreamhost.com > ~/.ssh/known_hosts
+#         shell: bash
+#         env:
+#           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+#       - run: source scripts/deploy.sh
